@@ -3,7 +3,7 @@
 <head>
   <title>CIS 196</title>  
 
-  <style type="text/css" media="screen">
+  <!--style type="text/css" media="screen">
   body {
     margin: 0;
     margin-bottom: 25px;
@@ -69,36 +69,52 @@
   }
 
 
-  </style>
+  </style-->
+
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+
+
 </head>
 <body>
   <div id="page">
 
 
-    <div class="container" id="content">
-      <div id="header">
-        <h1>Allison Haz Cheezburger!</h1>
+    <div class="row-fluid" id="content">
+      <div class="span6 offset3" id="header">
+        <h1>Allison Haz Cheezburger!!</h1>
       </div>
 
-      <div>
+      <div class = "span6 offset3">
         <img src="http://www.beccahamiltonbooks.com/wp-content/uploads/2012/09/lolcat7.gif"/>
-      </div>
-      <h3> Damn right I is ten ninjas. Learn my ways on <a href="https://twitter.com/theAlliePearce">Twitter!</a></h3>
-
-      <h2>Cheezburger Order Form</h2>
-      <form action="orders.html" method="post" id ="cheezburger_form">
-        What kind of cheez(ez)?  <br> <input type="checkbox" name="chz" value="cheddar"> Cheddar<br>
+    	</div>
+		<div class="span8 offset2">
+		<h3> Damn right I is ten ninjas. Learn my ways on <a href="https://twitter.com/theAlliePearce">Twitter!</a></h3>
+        </div>
+		<br>
+		<div class="span6 offset3">
+		<h2>Cheezburger Order Form</h2>
+		</div>
+		<div class="span2 offset4">
+		<form action="orders.html" method="post" id ="cheezburger_form">
+	  	What kind of cheez(ez)?<br> 
+		<label class="checkbox">
+       	<input type="checkbox" name="chz" value="cheddar"> Cheddar<br>
         <input type="checkbox" name="cheez" value="swiss"> Swiss <br>
         <input type="checkbox" name="cheez" value="american"> American<br>
         <input type="checkbox" name="cheez" value="none"> No cheez <br>
         <br>
-        What kind of burger? <br> <input type="radio" name="burger" value="beef"> Beef<br>
+		</label>
+		What kind of burger?<br>
+		<label class="radio">
+        <input type="radio" name="burger" value="beef"> Beef<br>
         <input type="radio" name="burger" value="turkey">Turkey<br>
         <input type="radio" name="burger" value="veggie">Vegetables Imitating Burger<br>
         <br>
-        <input type="submit" value="Cheezburger plz!"/><br>
-      </form>
-
+        <input type="submit" class = "btn-primary" "value="Cheezburger plz!"/><br>
+      	</label>
+	  </form>
+	</div>
     </div>
     <div id="footer">&nbsp;</div>
   </div>
