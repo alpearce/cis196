@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @side_dish.type %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @side_dish.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_side_dish_path(@side_dish) %> |
+<%= link_to 'Back', side_dishes_path %>

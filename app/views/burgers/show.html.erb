@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Meat:</b>
+  <%= @burger.meat %>
+</p>
+
+<p>
+  <b>Cheese:</b>
+  <%= @burger.cheese %>
+</p>
+
+<p>
+  <b>Bun:</b>
+  <%= @burger.bun %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @burger.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_burger_path(@burger) %> |
+<%= link_to 'Back', burgers_path %>

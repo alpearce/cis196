@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @beverage.type %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @beverage.size %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @beverage.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_beverage_path(@beverage) %> |
+<%= link_to 'Back', beverages_path %>

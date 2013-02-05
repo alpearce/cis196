@@ -1,0 +1,27 @@
+<h1>Listing beverages</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Size</th>
+    <th>Order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @beverages.each do |beverage| %>
+  <tr>
+    <td><%= beverage.type %></td>
+    <td><%= beverage.size %></td>
+    <td><%= beverage.order %></td>
+    <td><%= link_to 'Show', beverage %></td>
+    <td><%= link_to 'Edit', edit_beverage_path(beverage) %></td>
+    <td><%= link_to 'Destroy', beverage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Beverage', new_beverage_path %>

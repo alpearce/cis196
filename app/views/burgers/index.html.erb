@@ -1,0 +1,29 @@
+<h1>Listing burgers</h1>
+
+<table>
+  <tr>
+    <th>Meat</th>
+    <th>Cheese</th>
+    <th>Bun</th>
+    <th>Order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @burgers.each do |burger| %>
+  <tr>
+    <td><%= burger.meat %></td>
+    <td><%= burger.cheese %></td>
+    <td><%= burger.bun %></td>
+    <td><%= burger.order %></td>
+    <td><%= link_to 'Show', burger %></td>
+    <td><%= link_to 'Edit', edit_burger_path(burger) %></td>
+    <td><%= link_to 'Destroy', burger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Burger', new_burger_path %>
