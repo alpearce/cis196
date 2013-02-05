@@ -1,6 +1,5 @@
 class CreateBurgers < ActiveRecord::Migration
   def change
-    drop_table :burgers
    	create_table :burgers do |t|
       t.string :meat
       t.string :cheese
