@@ -13,20 +13,46 @@
 
   <div class="field">
     <%= f.label :meat %><br />
-    <%= f.text_field :meat %>
+    <%= f.radio_button(:meat, "beef") %>
+    <%= f.label(:meat, "Beef") %><br />
+    <%= f.radio_button(:meat, "turkey") %>
+    <%= f.label(:meat, "Turkey") %><br />
+     <%= f.radio_button(:meat, "bison") %>
+    <%= f.label(:meat, "Bison") %><br />
+    <%= f.radio_button(:meat, "ostrich") %>
+    <%= f.label(:meat, "Ostrich") %><br />
+     <%= f.radio_button(:meat, "veggie") %>
+    <%= f.label(:meat, "Veggie") %><br />
+    
   </div>
   <div class="field">
-    <%= f.label :cheese %><br />
-    <%= f.text_field :cheese %>
+    <%= f.label :cheese%><br />
+    <%= f.radio_button(:cheese, "swiss") %>
+    <%= f.label(:swiss, "Swiss") %><br />
+    <%= f.radio_button(:cheese, "cheddar") %>
+    <%= f.label(:swiss, "Cheddar") %><br />
+    <%= f.radio_button(:cheese, "prov") %>
+    <%= f.label(:swiss, "Provolone") %><br />
+    <%= f.radio_button(:cheese, "amer") %>
+    <%= f.label(:swiss, "American") %><br />
   </div>
   <div class="field">
     <%= f.label :bun %><br />
-    <%= f.text_field :bun %>
+    <%= f.radio_button(:bun, "white") %>
+    <%= f.label(:bun, "White") %><br />
+    <%= f.radio_button(:bun, "wheat") %>
+    <%= f.label(:bun, "Wheat") %><br />
+    <%= f.radio_button(:bun, "onion") %>
+    <%= f.label(:bun, "Onion") %><br />
+    <%= f.radio_button(:bun, "none") %>
+    <%= f.label(:bun, "Skip the carbs") %><br />
   </div>
   <div class="field">
     <%= f.label :order %><br />
-    <%= f.text_field :order %>
+    <%= f.collection_select :order,
+      Order.all, :id, :customer, :prompt => "Select order"%><br />
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
