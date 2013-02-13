@@ -11,19 +11,64 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+<br>
+
+
+  <div class="row">
+    <div class="span3 offset1"
+    <p><h4>Select beverage</h4></p>
+   <label class="radio">
+    <%= f.radio_button(:type, "coke") %>
+    <%= f.label(:type, "Coke") %>
+   <%= f.radio_button(:type, "coke_z") %>
+    <%= f.label(:type, "Coke Zero") %>  
+    <%= f.radio_button(:type, "sprite") %>
+    <%= f.label(:type, "Sprite") %>
+    <%= f.radio_button(:type, "rootb") %>
+    <%= f.label(:type, "Root Beer") %>    
+    <%= f.radio_button(:type, "ginger") %>
+    <%= f.label(:type, "Ginger Ale") %> 
+    <%= f.radio_button(:type, "mtd") %>
+    <%= f.label(:type, "Mountain Dew") %>
+    <%= f.radio_button(:type, "dmtd") %>
+    <%= f.label(:type, "Diet Mountain Dew") %>
+    <%= f.radio_button(:type, "lemonade") %>
+    <%= f.label(:type, "Lemonade") %>       
+      </label>
+
+  <br>
+
+
+<p><h4>Select size</h4></p>
+    <label class="radio">
+    <%= f.radio_button(:size, "small") %>
+    <%= f.label(:size, "Small") %>
+    <%= f.radio_button(:size, "med") %>
+    <%= f.label(:size, "Medium") %>
+    <%= f.radio_button(:size, "large") %>
+    <%= f.label(:size, "Large") %>
+    <%= f.radio_button(:size, "xl") %>
+    <%= f.label(:size, "Extra Large") %>
+  </label>
+
+  <br>
+
+    <%= f.collection_select :order_id,
+      Order.all, :id, :customer, :prompt => "Select order"%><br />
+       <%= link_to "Create new order", new_order_path %>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary"%>
   </div>
-  <div class="field">
-    <%= f.label :size %><br />
-    <%= f.number_field :size %>
-  </div>
-  <div class="field">
-    <%= f.label :order %><br />
-    <%= f.text_field :order %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+
+
+ 
+
+</div>
+</div>
+
+
 <% end %>
+

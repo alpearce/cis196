@@ -11,15 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+<div class="row">
+  <div class="span3 offset1">
+ <p><h4>Select side</h4></p>
+    <label class="radio">
+    <%= f.radio_button(:type, "fries") %>
+    <%= f.label(:type, "Fries") %>
+    <%= f.radio_button(:type, "fruit") %>
+    <%= f.label(:type, "Fruit") %>
+    <%= f.radio_button(:type, "macncheese") %>
+    <%= f.label(:type, "Mac n Cheese") %>
+    <%= f.radio_button(:type, "salad") %>
+    <%= f.label(:type, "Salad") %>
+  </label>
+
+
+  <br>
+
+   <p><h4>Add to order:</h4></p>
+    <%= f.collection_select :order_id,
+      Order.all, :id, :customer, :prompt => "Select order"%><br />
+
+           <%= link_to "Create new order", new_order_path %>
+
+  <div class="form-actions">
+    <%= f.submit class: "btn btn-primary"%>
   </div>
-  <div class="field">
-    <%= f.label :order %><br />
-    <%= f.text_field :order %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+</div>
 <% end %>
