@@ -55,6 +55,7 @@
 
     <%= f.collection_select :order_id,
       Order.all, :id, :customer, :prompt => "Select order"%><br />
+
        <%= link_to "Create new order", new_order_path %>
 
   <div class="form-actions">
