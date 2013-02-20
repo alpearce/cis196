@@ -1,7 +1,7 @@
 class Burger < ActiveRecord::Base
   belongs_to :order
   attr_accessible :bun, :cheese, :meat, :order, :order_id
-  validates :bun, :meat, :presence => true
+  validates :bun, :presence => true
 
   attr_accessor :new_customer_name
   before_save :create_order_from_name
