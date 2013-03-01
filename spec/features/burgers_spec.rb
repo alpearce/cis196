@@ -4,7 +4,6 @@ require 'spec_helper'
   	it "can create a burger" do
   		visit burgers_path
       click_on "New Burger"
-      debugger;1
       choose("Turkey")
       choose('Swiss')
       choose('Onion')
