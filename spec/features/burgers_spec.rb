@@ -1,6 +1,13 @@
 require 'spec_helper'
 
-  describe "making burgers" do
+
+describe "making burgers" do
+  fixtures :users
+
+  before do 
+    sign_in
+  end
+  
   	it "can create a burger" do
   		visit burgers_path
       click_on "New Burger"
