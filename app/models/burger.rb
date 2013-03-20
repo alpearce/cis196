@@ -3,6 +3,8 @@ class Burger < ActiveRecord::Base
   attr_accessible :bun, :cheese, :meat, :order, :order_id
   validates :bun, :presence => true
 
+  #scope :vegetarians, where(meat: "Veggie")
+
   attr_accessor :new_customer_name
   before_save :create_order_from_name
 

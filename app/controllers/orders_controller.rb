@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
 
+    @spenders = Order.big_spenders
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
