@@ -48,6 +48,7 @@ class OrdersController < ApplicationController
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render json: @order, status: :created, location: @order }
+        Notifications.new_order.deliver
       else
         format.html { render action: "new" }
         format.json { render json: @order.errors, status: :unprocessable_entity }
