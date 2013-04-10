@@ -1,5 +1,10 @@
 
 
+<style type="text/css">
+.hidden { diplay: none; }
+.unhidden { display: block;}
+</style>
+
 <%= form_for(@burger) do |f| %>
   <% if @burger.errors.any? %>
     <div id="error_explanation">
@@ -14,6 +19,30 @@
   <% end %>
 
   <br>
+
+<div class="row">
+  <div class="span3 offset1">
+  <a href="javascript:unhide('helptext');" class="btn btn-info" id="helpbtn">Confused?</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span3 offset1">
+  <div id="helptext" class="hidden">
+  Select a bun, meat, and cheese for the burger.Then add the burger to an existing order or create a new one.
+  </div>
+  </div>
+</div>
+
+    <script type="text/javascript">
+    function unhide(divID) {
+      var item = document.getElementById(divID);
+      if (item) {
+        item.className=(item.className=='hidden')?'unhidden':'hidden';
+      }
+    }
+    </script>
+
   <div class="row">
     <div class="span3 offset1"
     <p><h4>Select meat</h4></p>
@@ -82,16 +111,29 @@
 
   <br>
 
-   <p><h4>Add to order:</h4></p>
-    <%= f.collection_select :order_id,
-      Order.all, :id, :customer, :prompt => "Select order"%><br />
-
-     <%= link_to "Create new order", new_order_path %>
-
-  <div class="form-actions">
-    <%= f.submit class: "btn btn-primary"%>
   </div>
 </div>
+
+<div class="row">
+  <div class = "span5 offset1">
+   <p><h4>Add to order:</h4></p>
+    <%= f.collection_select :order_id,
+      Order.all, :id, :customer, :prompt => "Select order"%>
+       <%= link_to "Create new order", new_order_path %><br />
+  </div>
 </div>
+  
+  <div class="row">
+    <div class="span3 offset1">
+     <div class="form-actions">
+      <%= f.submit class: "btn btn-primary"%> 
+      </div>
+      
+    </div>
+  </div>
+    
+ 
+  
+  
 <% end %>
 
